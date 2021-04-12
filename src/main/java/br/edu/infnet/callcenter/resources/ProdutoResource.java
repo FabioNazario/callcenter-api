@@ -45,7 +45,7 @@ public class ProdutoResource {
 	public ResponseEntity<Void> insert(@RequestBody Produto obj) {
 		obj = service.insert(obj);
 		
-		//utilizado para retornar a uri do objeto criado nos headers da requisicao
+		//utilizado para retornar a uri do objeto criado, nos headers do response
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getId()).toUri();
 		
